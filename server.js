@@ -76,19 +76,18 @@ app.get("/api/restaurants", (req, res) => {
 
 app.get("/api/restaurants/:id", (req, res) => {
   let id = req.params.id;
-  db.getRestaurantById(id).then((data) => {
-    res
-      .status(200)
-      .json({
+  db.getRestaurantById(id)
+    .then((data) => {
+      res.status(200).json({
         status: true,
         data: data,
         message: "get record successfully",
-      })
-      .catch((err) => {
-        res.status(400);
-        res.json(err);
       });
-  });
+    })
+    .catch((err) => {
+      res.status(400);
+      res.json(err);
+    });
 });
 
 app.put("/api/restaurants/:id", (req, res) => {
