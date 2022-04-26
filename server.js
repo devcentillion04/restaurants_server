@@ -19,7 +19,7 @@ const db = new RestaurantDB();
 
 app.use(cors());
 app.use(express.json());
-const port = process.env.port || 8080;
+const port = process.env.PORT || 8080;
 
 db.initialize(
   "mongodb+srv://Drashti:Drashti%402910@seneca.aj7m4.mongodb.net/sample_restaurants?retryWrites=true&w=majority"
